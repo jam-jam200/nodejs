@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./include/head.ejs") %>
+  </head>
+  <body>
+    <%- include("./include/nav.ejs") %>
+    <h1 class="pl-2">Contact Us</h1>
+    <form action="/message" method="POST" class="container">
+      <div class="form-group">
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          placeholder="enter name"
+          id="name"
+        /><br />
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="enter email"
+          id="email"
+        /><br />
+        <textarea
+          name="description"
+          id="message"
+          cols="30"
+          rows="10"
+          class="form-control"
+        ></textarea>
+        <input
+          class="btn-primary btn-block form-control"
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </form>
+  </body>
+</html>
