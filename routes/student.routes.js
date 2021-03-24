@@ -19,8 +19,7 @@ studentRouter.get("/", (req, res, next)=>{
 })
 
 studentRouter.get("/:id/:name", (req, res, next)=>{
-    // console.log(req.params);
-    res.send(`Student number ${req.params.id}`);
+    
 });
 
 module.exports = studentRouter;
