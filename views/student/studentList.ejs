@@ -8,7 +8,9 @@
     <h1>Student Information</h1>
     <ul>
       <% student.map((item)=>{%>
-      <li><%= item.name %></li>
+        <a href="/student">
+          <li><%= item.name %></li>
+      </a>
       <% }) %>
     </ul>
   </body>
