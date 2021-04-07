@@ -1,9 +1,13 @@
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
-const { createBrotliCompress } = require("zlib");
-
+ 
 const router = express.Router();
+/**
+ * destructuring it bercause it is not from the eyetem
+ */
+ 
+// router.use(myRequestMiddleware);
 
 //ROUTE
 router.get("/", (req, res, next) => {
@@ -36,11 +40,10 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage,
   fileFilter: (req, file, callback) => {
-      console.log(req);
     const ext = path.extname(file.originalname);
     if (ext == ".jpg" || ext == ".jpeg" || ext == ".jfif" || ext == ".png") {
       return callback(
-        res.status(400).end("only jpg, png, jfif, jpeg are allowed"),
+        new Error("only jpg, png, jfif, jpeg are allowed"),
         false
       );
     }
